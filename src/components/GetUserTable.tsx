@@ -32,6 +32,7 @@ const GetUserTable: React.FC = () => {
     try {
       const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
       if (!response.ok) {
+        alert('User not found...')
         throw new Error('User not found');
       }
       const userData: UserData = await response.json();
